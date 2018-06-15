@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="pam1" id="70">
+            <text-property name="promptText">开始日期</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pam2" id="71">
+            <text-property name="promptText">结束日期</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pam3" id="72">
+            <text-property name="promptText">商品编码</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="pam4" id="73">
+            <text-property name="promptText">商品名称</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://192.9.200.185:5432/dev</property>
+            <property name="odaUser">liubin</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">aW5jYQ==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">通用名</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">通用名</text-property>
+                    <text-property name="heading">通用名</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">商品编码</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">商品编码</text-property>
+                    <text-property name="heading">商品编码</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">规格</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">规格</text-property>
+                    <text-property name="heading">规格</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">净销售</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">净销售</text-property>
+                    <text-property name="heading">净销售</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tuihuo</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">tuihuo</text-property>
+                    <text-property name="heading">tuihuo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">销售数量</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">销售数量</text-property>
+                    <text-property name="heading">销售数量</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">净销售总金额</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">净销售总金额</text-property>
+                    <text-property name="heading">净销售总金额</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">净销售数量</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">净销售数量</text-property>
+                    <text-property name="heading">净销售数量</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">出库成本</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">出库成本</text-property>
+                    <text-property name="heading">出库成本</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">毛利</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">毛利</text-property>
+                    <text-property name="heading">毛利</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">通用名</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">商品编码</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">规格</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">净销售</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">tuihuo</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">销售数量</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">净销售总金额</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">净销售数量</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">出库成本</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">毛利</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[var query="";
+if(!"".equals(params["pam1"])&amp;&amp;!"".equals(params["pam2"])&amp;&amp;!"".equals(params["pam3"])&amp;&amp;!"".equals(params["pam4"])){
+  this.queryText="";    
+  query+=" select 	c.goods_name as 通用名,"
+  query+=" c.goods_code as 商品编码,"
+  query+=" c.goods_spec as 规格,"
+  query+=" sum(a.goods_qty) as 净销售,"
+  query+=" sum(COALESCE((case  when a.goods_qty<0   THEN a.goods_qty else 0 end ),0)) tuihuo,"
+  query+=" sum(COALESCE((case  when a.goods_qty>0   THEN a.goods_qty else 0 end ),0)) 销售数量,"
+  query+=" sum(round((CASE f.inout_flag WHEN 2 THEN j.PACK_qty WHEN 1 THEN j.PACK_qty * - 1 END) * a.resa_price,2))  as 净销售总金额,"
+  query+=" sum(CASE f.inout_flag WHEN 2 THEN j.goods_qty WHEN 1 THEN j.goods_qty * - 1 END)  as 净销售数量,"
+  query+=" sum(ROUND((CASE f.inout_flag WHEN 2 THEN j.goods_qty WHEN 1 THEN j.goods_qty * - 1 END) *e.unit_price,2)) as 出库成本, "	
+  query+=" sum(ROUND((CASE f.inout_flag WHEN 2 THEN j.goods_qty WHEN 1 THEN j.goods_qty * - 1 END) *(a.resa_price-e.unit_price),2)) as 毛利 "	
+  query+=" from  rsa_resa_dtl a " 
+  query+=" left join pub_goods c on a.goods_id=c.ID "
+  query+=" left join pub_factory d on c.factory_id=d.ID "
+  query+=" left join rsa_resa_doc b on b.id=a.doc_id "
+  query+=" left join war_stio_doc f on f.source_id=a.id and f.come_from='ResaDoc' "
+  query+=" left join war_stio_dtl j on j.doc_id=f.id "
+  query+=" left join pub_batch e on e.id=j.batch_id "
+  query+=" where to_char(b.busi_date,'yyyy-MM-dd hh24mi:ss') >='"+params["pam1"]+"'"
+  query+=" and to_char(b.busi_date,'yyyy-MM-dd hh24mi:ss') <='" +params["pam2"]+"'"
+  query+=" and  c.goods_code ='" + params["pam3"]+"'"
+  query+=" and c.goods_name like  '%" + params["pam4"]+"%'"
+  query+="group by c.goods_name ,"
+  query+="	c.goods_code ,"
+  query+="	c.goods_spec ";
+  this.queryText = query;
+}
+]]></method>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">通用名</property>
+                    <property name="nativeName">通用名</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">商品编码</property>
+                    <property name="nativeName">商品编码</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">规格</property>
+                    <property name="nativeName">规格</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">净销售</property>
+                    <property name="nativeName">净销售</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">tuihuo</property>
+                    <property name="nativeName">tuihuo</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">销售数量</property>
+                    <property name="nativeName">销售数量</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">净销售总金额</property>
+                    <property name="nativeName">净销售总金额</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">净销售数量</property>
+                    <property name="nativeName">净销售数量</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">出库成本</property>
+                    <property name="nativeName">出库成本</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">毛利</property>
+                    <property name="nativeName">毛利</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+		c.goods_name as 通用名,
+		c.goods_code as 商品编码,
+		c.goods_spec as 规格,
+		sum(a.goods_qty) as 净销售,
+		sum(COALESCE((case  when a.goods_qty<0   THEN a.goods_qty else 0 end ),0)) tuihuo,
+		sum(COALESCE((case  when a.goods_qty>0   THEN a.goods_qty else 0 end ),0)) 销售数量,
+        sum(round((CASE f.inout_flag WHEN 2 THEN j.PACK_qty WHEN 1 THEN j.PACK_qty * - 1 END) * a.resa_price,2))  as 净销售总金额,
+        sum(CASE f.inout_flag WHEN 2 THEN j.goods_qty WHEN 1 THEN j.goods_qty * - 1 END)  as 净销售数量,
+		sum(ROUND((CASE f.inout_flag WHEN 2 THEN j.goods_qty WHEN 1 THEN j.goods_qty * - 1 END) *e.unit_price,2)) as 出库成本,
+		SUM (round(	(CASE f.inout_flag	WHEN 2 THEN	j.PACK_qty	WHEN 1 THEN	j.PACK_qty * - 1 END ) * (A .resa_price - e.unit_price),2)) AS 毛利
+		
+		
+				
+
+   from  rsa_resa_dtl a  
+ left join pub_goods c on a.goods_id=c.ID
+ left join pub_factory d on c.factory_id=d.ID
+ left join rsa_resa_doc b on b.id=a.doc_id
+ left join war_stio_doc f on f.source_id=a.id and f.come_from='ResaDoc'
+ left join war_stio_dtl j on j.doc_id=f.id 
+  left join pub_batch e on e.id=j.batch_id
+	group by c.goods_name ,
+		c.goods_code ,
+		c.goods_spec
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>通用名</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>通用名</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>通用名</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>商品编码</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>商品编码</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>商品编码</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>规格</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>规格</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>规格</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>净销售</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>净销售</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>净销售</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tuihuo</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>tuihuo</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tuihuo</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>销售数量</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>销售数量</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>销售数量</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>净销售总金额</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>净销售总金额</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>净销售总金额</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>净销售数量</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>净销售数量</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>净销售数量</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>出库成本</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>出库成本</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>出库成本</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>毛利</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>毛利</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>毛利</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="6">
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">通用名</property>
+                    <text-property name="displayName">通用名</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["通用名"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">商品编码</property>
+                    <text-property name="displayName">商品编码</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["商品编码"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">规格</property>
+                    <text-property name="displayName">规格</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["规格"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">净销售</property>
+                    <text-property name="displayName">净销售</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["净销售"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">tuihuo</property>
+                    <text-property name="displayName">tuihuo</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tuihuo"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">销售数量</property>
+                    <text-property name="displayName">销售数量</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["销售数量"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">净销售总金额</property>
+                    <text-property name="displayName">净销售总金额</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["净销售总金额"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">净销售数量</property>
+                    <text-property name="displayName">净销售数量</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["净销售数量"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">出库成本</property>
+                    <text-property name="displayName">出库成本</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["出库成本"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">毛利</property>
+                    <text-property name="displayName">毛利</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["毛利"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="60"/>
+            <column id="61"/>
+            <column id="62"/>
+            <column id="63"/>
+            <column id="64"/>
+            <column id="65"/>
+            <column id="66"/>
+            <column id="67"/>
+            <column id="68"/>
+            <column id="69"/>
+            <header>
+                <row id="7">
+                    <cell id="8">
+                        <label id="9">
+                            <text-property name="text">通用名</text-property>
+                        </label>
+                    </cell>
+                    <cell id="10">
+                        <label id="11">
+                            <text-property name="text">商品编码</text-property>
+                        </label>
+                    </cell>
+                    <cell id="12">
+                        <label id="13">
+                            <text-property name="text">规格</text-property>
+                        </label>
+                    </cell>
+                    <cell id="14">
+                        <label id="15">
+                            <text-property name="text">净销售</text-property>
+                        </label>
+                    </cell>
+                    <cell id="16">
+                        <label id="17">
+                            <text-property name="text">tuihuo</text-property>
+                        </label>
+                    </cell>
+                    <cell id="18">
+                        <label id="19">
+                            <text-property name="text">销售数量</text-property>
+                        </label>
+                    </cell>
+                    <cell id="20">
+                        <label id="21">
+                            <text-property name="text">净销售总金额</text-property>
+                        </label>
+                    </cell>
+                    <cell id="22">
+                        <label id="23">
+                            <text-property name="text">净销售数量</text-property>
+                        </label>
+                    </cell>
+                    <cell id="24">
+                        <label id="25">
+                            <text-property name="text">出库成本</text-property>
+                        </label>
+                    </cell>
+                    <cell id="26">
+                        <label id="27">
+                            <text-property name="text">毛利</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="28">
+                    <cell id="29">
+                        <data id="30">
+                            <property name="resultSetColumn">通用名</property>
+                        </data>
+                    </cell>
+                    <cell id="31">
+                        <data id="32">
+                            <property name="resultSetColumn">商品编码</property>
+                        </data>
+                    </cell>
+                    <cell id="33">
+                        <data id="34">
+                            <property name="resultSetColumn">规格</property>
+                        </data>
+                    </cell>
+                    <cell id="35">
+                        <data id="36">
+                            <property name="resultSetColumn">净销售</property>
+                        </data>
+                    </cell>
+                    <cell id="37">
+                        <data id="38">
+                            <property name="resultSetColumn">tuihuo</property>
+                        </data>
+                    </cell>
+                    <cell id="39">
+                        <data id="40">
+                            <property name="resultSetColumn">销售数量</property>
+                        </data>
+                    </cell>
+                    <cell id="41">
+                        <data id="42">
+                            <property name="resultSetColumn">净销售总金额</property>
+                        </data>
+                    </cell>
+                    <cell id="43">
+                        <data id="44">
+                            <property name="resultSetColumn">净销售数量</property>
+                        </data>
+                    </cell>
+                    <cell id="45">
+                        <data id="46">
+                            <property name="resultSetColumn">出库成本</property>
+                        </data>
+                    </cell>
+                    <cell id="47">
+                        <data id="48">
+                            <property name="resultSetColumn">毛利</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="49">
+                    <cell id="50"/>
+                    <cell id="51"/>
+                    <cell id="52"/>
+                    <cell id="53"/>
+                    <cell id="54"/>
+                    <cell id="55"/>
+                    <cell id="56"/>
+                    <cell id="57"/>
+                    <cell id="58"/>
+                    <cell id="59"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

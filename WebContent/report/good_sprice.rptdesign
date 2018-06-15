@@ -1,0 +1,1664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[var count=1;]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="goods_code" id="194">
+            <text-property name="promptText">商品编码</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="retail_name" id="195">
+            <text-property name="promptText">门店名称</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="saas" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://192.9.200.185:5432/bugsaas</property>
+            <property name="odaUser">liubin</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">aW5jYQ==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="goodsPrice" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">id</text-property>
+                    <text-property name="heading">id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">goods_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">goods_id</text-property>
+                    <text-property name="heading">goods_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">零售价</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">零售价</text-property>
+                    <text-property name="heading">零售价</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">会员价</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">会员价</text-property>
+                    <text-property name="heading">会员价</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dept_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">dept_id</text-property>
+                    <text-property name="heading">dept_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">门店编码</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">门店编码</text-property>
+                    <text-property name="heading">门店编码</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">门店名称</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">门店名称</text-property>
+                    <text-property name="heading">门店名称</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">最近进价</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">最近进价</text-property>
+                    <text-property name="heading">最近进价</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">商品编码</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">商品编码</text-property>
+                    <text-property name="heading">商品编码</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">通用名</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">通用名</text-property>
+                    <text-property name="heading">通用名</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">商品名</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">商品名</text-property>
+                    <text-property name="heading">商品名</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">备注</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">备注</text-property>
+                    <text-property name="heading">备注</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">规格</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">规格</text-property>
+                    <text-property name="heading">规格</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">剂型</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">剂型</text-property>
+                    <text-property name="heading">剂型</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">单位</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">单位</text-property>
+                    <text-property name="heading">单位</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">生产厂商</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">生产厂商</text-property>
+                    <text-property name="heading">生产厂商</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">条码</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">条码</text-property>
+                    <text-property name="heading">条码</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">产地</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">产地</text-property>
+                    <text-property name="heading">产地</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">social_flag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">social_flag</text-property>
+                    <text-property name="heading">social_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">abc分类</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">abc分类</text-property>
+                    <text-property name="heading">abc分类</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">商品分类</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">商品分类</text-property>
+                    <text-property name="heading">商品分类</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">type_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">type_name</text-property>
+                    <text-property name="heading">type_name</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">goods_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">零售价</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">会员价</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">dept_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">门店编码</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">门店名称</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">最近进价</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">商品编码</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">通用名</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">商品名</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">备注</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">规格</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">剂型</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">单位</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">生产厂商</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">条码</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">产地</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">social_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">abc分类</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">商品分类</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">type_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[var query="";
+this.queryText=""; 
+query+="  SELECT  "
+query+="  A . ID,  "
+query+="  A .goods_id,  "
+query+="  case A .goods_price when null then  0 else round(A .goods_price,2) end 零售价,  "
+query+="  hyjg.hyj as 会员价,  "
+query+="  a.dept_id,  "
+query+="  G.retail_code AS 门店编码,  "
+query+="  G.retail_name AS 门店名称,  "
+query+="  (select last_price from pic_pur_price   "
+query+="  WHERE   "
+query+="  pic_pur_price.goods_id = A .goods_id and a.dept_id=pic_pur_price.dept_id and pic_pur_price.accountset_id =1) AS 最近进价,  "
+query+="  b.goods_code AS 商品编码,  "
+query+="  b.goods_name AS 通用名,  "
+query+="  b.commodity_name AS 商品名,  "
+query+="  b.memo AS 备注,  "
+query+="  b.goods_spec AS 规格,  "
+query+="  b.medicine_type AS 剂型,  "
+query+="  b.goods_unit AS 单位,  "
+query+="  c.factory_name AS 生产厂商,          "
+query+="  b.barcode AS 条码,  "
+query+="  b.prod_area AS 产地,  "
+query+="  CASE b.social_flag  "
+query+="  WHEN false THEN   "
+query+="                '否'  "
+query+="  ELSE  "
+query+="               '是'  "
+query+="  END  AS social_flag,  "
+query+="  (select item_name from sys_option_item  where item_id =''|| b .abc_class  "
+query+="   and option_id =(select id from sys_option where keyword='PUB_GOODS_ABC')) AS ABC分类,  "
+query+="  d.class_name AS 商品分类,  "
+query+="  e.type_name  "
+query+="  FROM  "
+query+="  pic_goods_price A  "
+query+="  LEFT JOIN pub_goods b ON A .goods_id = b. ID  "
+query+="  LEFT JOIN pub_factory c on b.factory_id=c.id  "
+query+="  LEFT JOIN pub_goods_class d on d.id=b.class_id  "
+query+="  LEFT JOIN pub_quality_type e on b.quality_type_id=e.id  "
+query+="  LEFT JOIN pic_adjust_dtl  f  on a.dtl_id=f.id  "
+query+="  LEFT JOIN pub_retail G ON A.dept_id = G . ID  "
+query+="  LEFT JOIN pub_price_type H ON a.price_type_id = h. ID  "
+query+="  LEFT JOIN (  "
+query+="  SELECT  "
+query+="  goods_id,dept_id,case goods_price when null then 0 else round(goods_price,2) end as hyj  "
+query+="  FROM  "
+query+="  pic_goods_price  "
+query+="  JOIN pub_price_type ON pic_goods_price.price_type_id = pub_price_type. ID AND pub_price_type.price_class = 'HYJ'  "
+query+="  ) hyjg ON hyjg.goods_id=a.goods_id and hyjg.dept_id=a.dept_id  "
+query+="  where h.price_class='LSJ'"
+
+if(!"".equals(params["goods_code"])&amp;&amp;!"null".equals(params["goods_code"])){
+	query+=" and b.goods_code='"+params["goods_code"]+"'"
+}
+
+if(!"".equals(params["retail_name"])&amp;&amp;!"null".equals(params["retail_name"])){
+	query+=" and G.retail_name like '%"+params["retail_name"]+"%'"
+}
+
+query+="  ORDER BY  f.id  desc;  ";
+this.queryText = query;]]></method>
+            <property name="dataSource">saas</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">id</property>
+                    <property name="nativeName">id</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">goods_id</property>
+                    <property name="nativeName">goods_id</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">零售价</property>
+                    <property name="nativeName">零售价</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">会员价</property>
+                    <property name="nativeName">会员价</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">dept_id</property>
+                    <property name="nativeName">dept_id</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">门店编码</property>
+                    <property name="nativeName">门店编码</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">门店名称</property>
+                    <property name="nativeName">门店名称</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">最近进价</property>
+                    <property name="nativeName">最近进价</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">商品编码</property>
+                    <property name="nativeName">商品编码</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">通用名</property>
+                    <property name="nativeName">通用名</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">商品名</property>
+                    <property name="nativeName">商品名</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">备注</property>
+                    <property name="nativeName">备注</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">规格</property>
+                    <property name="nativeName">规格</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">剂型</property>
+                    <property name="nativeName">剂型</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">单位</property>
+                    <property name="nativeName">单位</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">生产厂商</property>
+                    <property name="nativeName">生产厂商</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">条码</property>
+                    <property name="nativeName">条码</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">产地</property>
+                    <property name="nativeName">产地</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">social_flag</property>
+                    <property name="nativeName">social_flag</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">abc分类</property>
+                    <property name="nativeName">abc分类</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">商品分类</property>
+                    <property name="nativeName">商品分类</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">type_name</property>
+                    <property name="nativeName">type_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT
+A . ID,
+A .goods_id,
+case A .goods_price when null then  0 else round(A .goods_price,2) end 零售价,
+hyjg.hyj as 会员价,
+a.dept_id,
+G.retail_code AS 门店编码,
+G.retail_name AS 门店名称,
+(select last_price from pic_pur_price 
+WHERE 
+pic_pur_price.goods_id = A .goods_id and a.dept_id=pic_pur_price.dept_id and pic_pur_price.accountset_id =1) AS 最近进价,
+b.goods_code AS 商品编码,
+b.goods_name AS 通用名,
+b.commodity_name AS 商品名,
+b.memo AS 备注,
+b.goods_spec AS 规格,
+b.medicine_type AS 剂型,
+b.goods_unit AS 单位,
+c.factory_name AS 生产厂商,        
+b.barcode AS 条码,
+b.prod_area AS 产地,
+CASE b.social_flag
+WHEN false THEN 
+              '否'
+ELSE
+             '是'
+END  AS social_flag,
+(select item_name from sys_option_item  where item_id =''|| b .abc_class
+ and option_id =(select id from sys_option where keyword='PUB_GOODS_ABC')) AS ABC分类,
+d.class_name AS 商品分类,
+e.type_name
+FROM
+pic_goods_price A
+LEFT JOIN pub_goods b ON A .goods_id = b. ID
+LEFT JOIN pub_factory c on b.factory_id=c.id
+LEFT JOIN pub_goods_class d on d.id=b.class_id
+LEFT JOIN pub_quality_type e on b.quality_type_id=e.id
+LEFT JOIN pic_adjust_dtl  f  on a.dtl_id=f.id
+LEFT JOIN pub_retail G ON A.dept_id = G . ID
+LEFT JOIN pub_price_type H ON a.price_type_id = h. ID
+LEFT JOIN (
+SELECT
+		goods_id,dept_id,case goods_price when null then 0 else round(goods_price,2) end as hyj
+FROM
+pic_goods_price
+JOIN pub_price_type ON pic_goods_price.price_type_id = pub_price_type. ID AND pub_price_type.price_class = 'HYJ'
+) hyjg ON hyjg.goods_id=a.goods_id and hyjg.dept_id=a.dept_id
+where h.price_class='LSJ'-- and ${arg1}
+ORDER BY  f.id  desc;
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>goods_id</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>goods_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>goods_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>零售价</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>零售价</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>零售价</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>会员价</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>会员价</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>会员价</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>dept_id</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>dept_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dept_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>门店编码</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>门店编码</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>门店编码</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>门店名称</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>门店名称</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>门店名称</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>最近进价</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>10</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>最近进价</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>最近进价</design:label>
+            <design:formattingHints>
+              <design:displaySize>22</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>商品编码</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>商品编码</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>商品编码</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>通用名</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>通用名</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>通用名</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>商品名</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>商品名</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>商品名</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>备注</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>400</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>备注</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>备注</design:label>
+            <design:formattingHints>
+              <design:displaySize>400</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>规格</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>规格</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>规格</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>剂型</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>剂型</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>剂型</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>单位</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>单位</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>单位</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>生产厂商</design:name>
+              <design:position>16</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>生产厂商</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>生产厂商</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>条码</design:name>
+              <design:position>17</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>条码</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>条码</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>产地</design:name>
+              <design:position>18</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>产地</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>产地</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>social_flag</design:name>
+              <design:position>19</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>social_flag</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>social_flag</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>abc分类</design:name>
+              <design:position>20</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>abc分类</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>abc分类</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>商品分类</design:name>
+              <design:position>21</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>商品分类</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>商品分类</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>type_name</design:name>
+              <design:position>22</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>type_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>type_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="goods" id="115">
+            <property name="textAlign">center</property>
+            <property name="verticalAlign">middle</property>
+        </style>
+        <style name="table-footer" id="189">
+            <property name="backgroundColor">#FFFF86</property>
+        </style>
+        <style name="table-header" id="190">
+            <property name="backgroundColor">#6A6A6A</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="leftMargin">0in</property>
+            <property name="rightMargin">0in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="6">
+            <property name="style">goods</property>
+            <property name="textAlign">center</property>
+            <property name="height">2.8229166666666665in</property>
+            <property name="width">90%</property>
+            <column id="7"/>
+            <row id="191">
+                <property name="height">0.3645833333333333in</property>
+                <cell id="192"/>
+            </row>
+            <row id="8">
+                <cell id="9">
+                    <label id="114">
+                        <property name="fontSize">20pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">商品价格最近进价查询</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="10">
+                <property name="textAlign">center</property>
+                <property name="height">1.5520833333333333in</property>
+                <cell id="11">
+                    <property name="textAlign">center</property>
+                    <table id="14">
+                        <property name="dataSet">goodsPrice</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">门店编码</property>
+                                <text-property name="displayName">门店编码</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["门店编码"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">门店名称</property>
+                                <text-property name="displayName">门店名称</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["门店名称"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">商品编码</property>
+                                <text-property name="displayName">商品编码</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["商品编码"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">通用名</property>
+                                <text-property name="displayName">通用名</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["通用名"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">商品名</property>
+                                <text-property name="displayName">商品名</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["商品名"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">条码</property>
+                                <text-property name="displayName">条码</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["条码"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">规格</property>
+                                <text-property name="displayName">规格</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["规格"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">剂型</property>
+                                <text-property name="displayName">剂型</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["剂型"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">单位</property>
+                                <text-property name="displayName">单位</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["单位"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">生产厂商</property>
+                                <text-property name="displayName">生产厂商</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["生产厂商"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">产地</property>
+                                <text-property name="displayName">产地</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["产地"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">备注</property>
+                                <text-property name="displayName">备注</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["备注"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">零售价</property>
+                                <text-property name="displayName">零售价</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["零售价"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">会员价</property>
+                                <text-property name="displayName">会员价</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["会员价"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">最近进价</property>
+                                <text-property name="displayName">最近进价</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["最近进价"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Column Binding</property>
+                                <expression name="expression" type="javascript">count++</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <column id="66"/>
+                        <column id="67"/>
+                        <column id="68"/>
+                        <column id="69"/>
+                        <column id="70"/>
+                        <column id="71"/>
+                        <column id="72"/>
+                        <column id="73"/>
+                        <column id="74"/>
+                        <column id="75"/>
+                        <column id="76"/>
+                        <column id="77"/>
+                        <column id="78"/>
+                        <column id="79"/>
+                        <column id="80"/>
+                        <column id="81"/>
+                        <header>
+                            <row id="15">
+                                <property name="fontSize">14pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="verticalAlign">middle</property>
+                                <property name="height">0.427in</property>
+                                <cell id="16">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="112">
+                                        <text-property name="text">序号</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="17">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="82">
+                                        <text-property name="text">门店编码</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="18">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="84">
+                                        <text-property name="text">门店名称</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="19">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="86">
+                                        <text-property name="text">商品编码</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="20">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="88">
+                                        <text-property name="text">通用名</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="21">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="90">
+                                        <text-property name="text">商品名</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="22">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="92">
+                                        <text-property name="text">条码</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="23">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="94">
+                                        <text-property name="text">规格</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="24">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="96">
+                                        <text-property name="text">剂型</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="25">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="98">
+                                        <text-property name="text">单位</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="26">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="100">
+                                        <text-property name="text">生产厂商</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="27">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="102">
+                                        <text-property name="text">产地</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="28">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="104">
+                                        <text-property name="text">备注</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="29">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="106">
+                                        <text-property name="text">零售价</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="30">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="108">
+                                        <text-property name="text">会员价</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="31">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <label id="110">
+                                        <text-property name="text">最近进价</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="32">
+                                <method name="onPrepare"><![CDATA[count= 0; ]]></method>
+                                <method name="onCreate"><![CDATA[
+count++;
+if(count % 2 == 0){
+	this.getStyle().backgroundColor = "#c8c8c8";
+}
+]]></method>
+                                <property name="verticalAlign">middle</property>
+                                <property name="height">0.4270833333333333in</property>
+                                <cell id="33">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="113">
+                                        <property name="resultSetColumn">Column Binding</property>
+                                    </data>
+                                </cell>
+                                <cell id="34">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="83">
+                                        <property name="resultSetColumn">门店编码</property>
+                                    </data>
+                                </cell>
+                                <cell id="35">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="85">
+                                        <property name="resultSetColumn">门店名称</property>
+                                    </data>
+                                </cell>
+                                <cell id="36">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="87">
+                                        <property name="resultSetColumn">商品编码</property>
+                                    </data>
+                                </cell>
+                                <cell id="37">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="89">
+                                        <property name="resultSetColumn">通用名</property>
+                                    </data>
+                                </cell>
+                                <cell id="38">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="91">
+                                        <property name="resultSetColumn">商品名</property>
+                                    </data>
+                                </cell>
+                                <cell id="39">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="93">
+                                        <property name="resultSetColumn">条码</property>
+                                    </data>
+                                </cell>
+                                <cell id="40">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="95">
+                                        <property name="resultSetColumn">规格</property>
+                                    </data>
+                                </cell>
+                                <cell id="41">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="97">
+                                        <property name="resultSetColumn">剂型</property>
+                                    </data>
+                                </cell>
+                                <cell id="42">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="99">
+                                        <property name="resultSetColumn">单位</property>
+                                    </data>
+                                </cell>
+                                <cell id="43">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="101">
+                                        <property name="resultSetColumn">生产厂商</property>
+                                    </data>
+                                </cell>
+                                <cell id="44">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="103">
+                                        <property name="resultSetColumn">产地</property>
+                                    </data>
+                                </cell>
+                                <cell id="45">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="105">
+                                        <property name="resultSetColumn">备注</property>
+                                    </data>
+                                </cell>
+                                <cell id="46">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="107">
+                                        <property name="resultSetColumn">零售价</property>
+                                    </data>
+                                </cell>
+                                <cell id="47">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="109">
+                                        <property name="resultSetColumn">会员价</property>
+                                    </data>
+                                </cell>
+                                <cell id="48">
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">1px</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">1px</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">1px</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">1px</property>
+                                    <data id="111">
+                                        <property name="resultSetColumn">最近进价</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

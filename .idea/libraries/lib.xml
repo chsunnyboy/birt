@@ -1,0 +1,32 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.apache.xerces_2.9.0.v201101211617.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.eclipse.birt.runtime_4.6.0-20160607.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.eclipse.datatools.connectivity.oda.consumer_3.3.0.201603142002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.eclipse.osgi_3.11.0.v20160603-1336.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.apache.derby_10.11.1.1_v201605202053.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/jaxrpc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/javax.wsdl_1.5.1.v201012040544.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.apache.batik.util_1.6.0.v201011041432.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/axis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.eclipse.datatools.connectivity.oda_3.5.0.201603142002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.eclipse.equinox.common_3.8.0.v20160509-1230.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.apache.commons.logging_1.1.1.v201101211721.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/com.lowagie.text_2.1.7.v201004222200.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.eclipse.datatools.connectivity_1.13.0.201603142002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/com.ibm.icu_56.1.0.v201601250100.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.apache.batik.css_1.6.0.v201011041432.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.eclipse.core.runtime_3.12.0.v20160606-1342.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/postgresql-9.4.1212.jre7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/js.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/commons-discovery-0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/org.w3c.css.sac_1.3.1.v200903091627.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/viewservlets.jar!/" />
+      <root url="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/commons-cli-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

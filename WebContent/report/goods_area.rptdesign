@@ -1,0 +1,1314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">Data Cube.goodsArea.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube.goodsArea.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="Data Cube.goodsArea.x">135</property>
+    <property name="Data Cube.goodsArea.y">80</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">5</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="date1" id="403">
+            <text-property name="promptText">开始日期</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="date2" id="404">
+            <text-property name="promptText">结束日期</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="saas" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://192.9.200.185:5432/dev</property>
+            <property name="odaUser">liubin</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">aW5jYQ==</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="goodsArea" id="5">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">商品编码</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">商品编码</text-property>
+                    <text-property name="heading">商品编码</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">通用名</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">通用名</text-property>
+                    <text-property name="heading">通用名</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">商品名</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">商品名</text-property>
+                    <text-property name="heading">商品名</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">规格</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">规格</text-property>
+                    <text-property name="heading">规格</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">备注</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">备注</text-property>
+                    <text-property name="heading">备注</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">生产厂商</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">生产厂商</text-property>
+                    <text-property name="heading">生产厂商</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">零售门店</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">零售门店</text-property>
+                    <text-property name="heading">零售门店</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">销售数量</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">销售数量</text-property>
+                    <text-property name="heading">销售数量</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">销售金额</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">销售金额</text-property>
+                    <text-property name="heading">销售金额</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">商品编码</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">通用名</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">商品名</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">规格</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">备注</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">生产厂商</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">零售门店</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">销售数量</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">销售金额</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="rowFetchLimit">0</property>
+            <method name="beforeOpen"><![CDATA[
+var query="";
+if(!"null".equals(params["date1"])&amp;&amp;!"null".equals(params["date2"])){
+	this.queryText=""; 
+	query+="  SELECT  "
+	query+="  A .goods_code AS 商品编码,  "
+	query+="  A .goods_name AS 通用名,  "
+	query+="  A .commodity_name AS 商品名,  "
+	query+="  A .goods_spec AS 规格,  "
+	query+="  A .memo AS 备注,  "
+	query+="  b.factory_name AS 生产厂商,  "
+	query+="  C .retail_name AS 零售门店,  "
+	query+="  COALESCE (SUM(rsa_all.goods_qty), 0) AS 销售数量,  "
+	query+="  COALESCE (SUM(rsa_all.real_money), 0) AS 销售金额  "
+	query+="  FROM  "
+	query+="  pub_goods A  "
+	query+="  LEFT JOIN pub_factory B ON A .factory_id = b.id  "
+	query+="  LEFT JOIN (  "
+	query+="  SELECT  "
+	query+="  b.busi_date,  "
+	query+="  b.retail_id,  "
+	query+="  A .goods_id,  "
+	query+="  COALESCE (SUM(A .goods_qty), 0) goods_qty,  "
+	query+="  COALESCE (SUM(A .real_money), 0) real_money,  "
+	query+="  COALESCE (SUM(A .sk_amount_money), 0) sk_amount_money  "
+	query+="  FROM  "
+	query+="  rsa_resa_dtl A  "
+	query+="  LEFT JOIN rsa_resa_doc b ON A .doc_id = b. ID  "
+	query+="  WHERE  "
+	query+="  b.status = 1  "
+	query+="  AND b.accountset_id = 1  "
+	query+="  GROUP BY  "
+	query+="  b.busi_date,  "
+	query+="  b.retail_id,  "
+	query+="  A .goods_id  "
+	query+="  ) rsa_all ON rsa_all.goods_id = A .id  "
+	query+="  LEFT JOIN pub_retail C ON rsa_all.retail_id = C . ID  "
+	query+="  where rsa_all.busi_date>='"+params["date1"]+"' and rsa_all.busi_date<='"+params["date2"]+"' "
+	query+="  and A .goods_code in ('000405','000512','000645','000653','000711','000760','000779') "
+	query+="  GROUP by  A .goods_code,A .goods_name,A .commodity_name,A .goods_spec,A .memo,b.factory_name,C .retail_name  ";
+
+	this.queryText = query;
+}else if("null".equals(params["date1"])&amp;&amp;!"null".equals(params["date2"])){
+	this.queryText=""; 
+	query+="  SELECT  "
+	query+="  A .goods_code AS 商品编码,  "
+	query+="  A .goods_name AS 通用名,  "
+	query+="  A .commodity_name AS 商品名,  "
+	query+="  A .goods_spec AS 规格,  "
+	query+="  A .memo AS 备注,  "
+	query+="  b.factory_name AS 生产厂商,  "
+	query+="  C .retail_name AS 零售门店,  "
+	query+="  COALESCE (SUM(rsa_all.goods_qty), 0) AS 销售数量,  "
+	query+="  COALESCE (SUM(rsa_all.real_money), 0) AS 销售金额  "
+	query+="  FROM  "
+	query+="  pub_goods A  "
+	query+="  LEFT JOIN pub_factory B ON A .factory_id = b.id  "
+	query+="  LEFT JOIN (  "
+	query+="  SELECT  "
+	query+="  b.busi_date,  "
+	query+="  b.retail_id,  "
+	query+="  A .goods_id,  "
+	query+="  COALESCE (SUM(A .goods_qty), 0) goods_qty,  "
+	query+="  COALESCE (SUM(A .real_money), 0) real_money,  "
+	query+="  COALESCE (SUM(A .sk_amount_money), 0) sk_amount_money  "
+	query+="  FROM  "
+	query+="  rsa_resa_dtl A  "
+	query+="  LEFT JOIN rsa_resa_doc b ON A .doc_id = b. ID  "
+	query+="  WHERE  "
+	query+="  b.status = 1  "
+	query+="  AND b.accountset_id = 1  "
+	query+="  GROUP BY  "
+	query+="  b.busi_date,  "
+	query+="  b.retail_id,  "
+	query+="  A .goods_id  "
+	query+="  ) rsa_all ON rsa_all.goods_id = A .id  "
+	query+="  LEFT JOIN pub_retail C ON rsa_all.retail_id = C . ID  "
+	query+="  where rsa_all.busi_date<='"+params["date2"]+"' "
+	query+="  and A .goods_code in ('000405','000512','000645','000653','000711','000760','000779') "
+	query+="  GROUP by  A .goods_code,A .goods_name,A .commodity_name,A .goods_spec,A .memo,b.factory_name,C .retail_name  ";
+
+	this.queryText = query;
+}else if(!"null".equals(params["date1"])&amp;&amp;"null".equals(params["date2"])){
+	this.queryText=""; 
+	query+="  SELECT  "
+	query+="  A .goods_code AS 商品编码,  "
+	query+="  A .goods_name AS 通用名,  "
+	query+="  A .commodity_name AS 商品名,  "
+	query+="  A .goods_spec AS 规格,  "
+	query+="  A .memo AS 备注,  "
+	query+="  b.factory_name AS 生产厂商,  "
+	query+="  C .retail_name AS 零售门店,  "
+	query+="  COALESCE (SUM(rsa_all.goods_qty), 0) AS 销售数量,  "
+	query+="  COALESCE (SUM(rsa_all.real_money), 0) AS 销售金额  "
+	query+="  FROM  "
+	query+="  pub_goods A  "
+	query+="  LEFT JOIN pub_factory B ON A .factory_id = b.id  "
+	query+="  LEFT JOIN (  "
+	query+="  SELECT  "
+	query+="  b.busi_date,  "
+	query+="  b.retail_id,  "
+	query+="  A .goods_id,  "
+	query+="  COALESCE (SUM(A .goods_qty), 0) goods_qty,  "
+	query+="  COALESCE (SUM(A .real_money), 0) real_money,  "
+	query+="  COALESCE (SUM(A .sk_amount_money), 0) sk_amount_money  "
+	query+="  FROM  "
+	query+="  rsa_resa_dtl A  "
+	query+="  LEFT JOIN rsa_resa_doc b ON A .doc_id = b. ID  "
+	query+="  WHERE  "
+	query+="  b.status = 1  "
+	query+="  AND b.accountset_id = 1  "
+	query+="  GROUP BY  "
+	query+="  b.busi_date,  "
+	query+="  b.retail_id,  "
+	query+="  A .goods_id  "
+	query+="  ) rsa_all ON rsa_all.goods_id = A .id  "
+	query+="  LEFT JOIN pub_retail C ON rsa_all.retail_id = C . ID  "
+	query+="  where rsa_all.busi_date>='"+params["date1"]+"' "
+	query+="  and A .goods_code in ('000405','000512','000645','000653','000711','000760','000779') "
+	query+="  GROUP by  A .goods_code,A .goods_name,A .commodity_name,A .goods_spec,A .memo,b.factory_name,C .retail_name  ";
+
+	this.queryText = query;
+}]]></method>
+            <property name="dataSource">saas</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">商品编码</property>
+                    <property name="nativeName">商品编码</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">通用名</property>
+                    <property name="nativeName">通用名</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">商品名</property>
+                    <property name="nativeName">商品名</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">规格</property>
+                    <property name="nativeName">规格</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">备注</property>
+                    <property name="nativeName">备注</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">生产厂商</property>
+                    <property name="nativeName">生产厂商</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">零售门店</property>
+                    <property name="nativeName">零售门店</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">销售数量</property>
+                    <property name="nativeName">销售数量</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">销售金额</property>
+                    <property name="nativeName">销售金额</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT
+A .goods_code AS 商品编码,
+A .goods_name AS 通用名,
+A .commodity_name AS 商品名,
+A .goods_spec AS 规格,
+A .memo AS 备注,
+b.factory_name AS 生产厂商,
+C .retail_name AS 零售门店,
+COALESCE (SUM(rsa_all.goods_qty), 0) AS "销售数量",
+COALESCE (SUM(rsa_all.real_money), 0) AS "销售金额"
+FROM
+pub_goods A
+LEFT JOIN pub_factory B ON A .factory_id = b.id
+LEFT JOIN (
+SELECT
+to_char(b.busi_date,'YYYY-MM-DD hh:mi:ss') busi_date,
+b.retail_id,
+A .goods_id,
+COALESCE (SUM(A .goods_qty), 0) goods_qty,
+COALESCE (SUM(A .real_money), 0) real_money,
+COALESCE (SUM(A .sk_amount_money), 0) sk_amount_money
+FROM
+rsa_resa_dtl A
+LEFT JOIN rsa_resa_doc b ON A .doc_id = b. ID
+WHERE
+b.status = 1
+AND b.accountset_id = 1
+GROUP BY
+to_char(b.busi_date,'YYYY-MM-DD hh:mi:ss'),
+b.retail_id,
+A .goods_id
+) rsa_all ON rsa_all.goods_id = A .id
+LEFT JOIN pub_retail C ON rsa_all.retail_id = C . ID 
+where A .goods_code in ('000405','000512','000645','000653','000711','000760','000779') 
+GROUP by  A .goods_code,A .goods_name,A .commodity_name,A .goods_spec,A .memo,b.factory_name,C .retail_name]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>商品编码</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>商品编码</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>商品编码</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>通用名</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>通用名</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>通用名</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>商品名</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>商品名</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>商品名</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>规格</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>规格</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>规格</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>备注</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>400</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>备注</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>备注</design:label>
+            <design:formattingHints>
+              <design:displaySize>400</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>生产厂商</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>生产厂商</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>生产厂商</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>零售门店</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>零售门店</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>零售门店</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>销售数量</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>销售数量</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>销售数量</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>销售金额</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>销售金额</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>销售金额</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="38">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="39">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="40">
+                            <property name="levels">
+                                <tabular-level name="商品编码" id="41">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">商品编码</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group1" id="42">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="43">
+                            <property name="levels">
+                                <tabular-level name="商品名" id="44">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">商品名</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group2" id="45">
+                    <property name="defaultHierarchy">NewTabularHierarchy2</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy2" id="46">
+                            <property name="levels">
+                                <tabular-level name="规格" id="47">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">规格</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group3" id="48">
+                    <property name="defaultHierarchy">NewTabularHierarchy3</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy3" id="49">
+                            <property name="levels">
+                                <tabular-level name="生产厂商" id="50">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">生产厂商</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group4" id="51">
+                    <property name="defaultHierarchy">NewTabularHierarchy4</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy4" id="52">
+                            <property name="levels">
+                                <tabular-level name="通用名" id="53">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">通用名</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group5" id="286">
+                    <property name="defaultHierarchy">NewTabularHierarchy5</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy5" id="287">
+                            <property name="levels">
+                                <tabular-level name="零售门店" id="288">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">零售门店</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field1" id="56">
+                    <property name="measures">
+                        <tabular-measure name="销售金额" id="273">
+                            <expression name="measureExpression" type="javascript">dataSetRow["销售金额"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field" id="274">
+                    <property name="measures">
+                        <tabular-measure name="销售数量" id="275">
+                            <expression name="measureExpression" type="javascript">dataSetRow["销售数量"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">goodsArea</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="crosstab-column-header" id="389">
+            <property name="backgroundColor">#C0C0C0</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2"/>
+    </page-setup>
+    <body>
+        <grid id="380">
+            <column id="381"/>
+            <row id="382">
+                <property name="verticalAlign">bottom</property>
+                <property name="height">0.65625in</property>
+                <cell id="383">
+                    <label id="388">
+                        <property name="fontSize">15pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">销售门店分布</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="384">
+                <cell id="385">
+                    <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="324">
+                        <property name="cube">Data Cube</property>
+                        <property name="measures">
+                            <extended-item extensionName="MeasureView" id="332">
+                                <property name="measure">销售数量</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="333">
+                                        <property name="aggregationOnRow">Group4/通用名</property>
+                                        <property name="aggregationOnColumn">Group5/零售门店</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">1px</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">1px</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">1px</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">1px</property>
+                                        <property name="content">
+                                            <data id="334">
+                                                <property name="textAlign">center</property>
+                                                <property name="resultSetColumn">销售数量_Group4/通用名_Group5/零售门店</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="335">
+                                        <property name="content">
+                                            <label id="336">
+                                                <property name="fontWeight">bold</property>
+                                                <text-property name="text">销售数量</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">1px</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">1px</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">1px</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">1px</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                            <extended-item extensionName="MeasureView" id="338">
+                                <property name="measure">销售金额</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="339">
+                                        <property name="aggregationOnRow">Group4/通用名</property>
+                                        <property name="aggregationOnColumn">Group5/零售门店</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">1px</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">1px</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">1px</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">1px</property>
+                                        <property name="content">
+                                            <data id="340">
+                                                <property name="textAlign">center</property>
+                                                <property name="resultSetColumn">销售金额_Group4/通用名_Group5/零售门店</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="341">
+                                        <property name="content">
+                                            <label id="342">
+                                                <property name="fontWeight">bold</property>
+                                                <text-property name="text">销售金额</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="backgroundColor">#C0C0C0</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">1px</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">1px</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">1px</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">1px</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="rows">
+                            <extended-item extensionName="CrosstabView" id="343">
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="344">
+                                        <property name="dimension">Group</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View1" id="345">
+                                                <property name="level">Group/商品编码</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="346">
+                                                        <property name="content">
+                                                            <data name="商品编码" id="347">
+                                                                <property name="textAlign">center</property>
+                                                                <property name="resultSetColumn">商品编码</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="verticalAlign">top</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">1px</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">1px</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">1px</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">1px</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                    <extended-item extensionName="DimensionView" id="349">
+                                        <property name="dimension">Group1</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View2" id="350">
+                                                <property name="level">Group1/商品名</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="351">
+                                                        <property name="content">
+                                                            <data name="商品名" id="354">
+                                                                <property name="textAlign">center</property>
+                                                                <property name="resultSetColumn">商品名</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="verticalAlign">top</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">1px</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">1px</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">1px</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">1px</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                    <extended-item extensionName="DimensionView" id="356">
+                                        <property name="dimension">Group2</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View3" id="357">
+                                                <property name="level">Group2/规格</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="358">
+                                                        <property name="content">
+                                                            <data name="规格" id="361">
+                                                                <property name="textAlign">center</property>
+                                                                <property name="resultSetColumn">规格</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="verticalAlign">top</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">1px</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">1px</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">1px</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">1px</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                    <extended-item extensionName="DimensionView" id="363">
+                                        <property name="dimension">Group3</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View4" id="364">
+                                                <property name="level">Group3/生产厂商</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="365">
+                                                        <property name="content">
+                                                            <data name="生产厂商" id="368">
+                                                                <property name="textAlign">center</property>
+                                                                <property name="resultSetColumn">生产厂商</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="verticalAlign">top</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">1px</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">1px</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">1px</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">1px</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                    <extended-item extensionName="DimensionView" id="370">
+                                        <property name="dimension">Group4</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View5" id="371">
+                                                <property name="level">Group4/通用名</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="372">
+                                                        <property name="content">
+                                                            <data name="通用名" id="375">
+                                                                <property name="textAlign">center</property>
+                                                                <property name="resultSetColumn">通用名</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="verticalAlign">top</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">1px</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">1px</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">1px</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">1px</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="columns">
+                            <extended-item extensionName="CrosstabView" id="326">
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="327">
+                                        <property name="dimension">Group5</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View" id="328">
+                                                <property name="level">Group5/零售门店</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="329">
+                                                        <property name="content">
+                                                            <data name="零售门店" id="330">
+                                                                <property name="textAlign">center</property>
+                                                                <property name="resultSetColumn">零售门店</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">1px</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">1px</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">1px</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">1px</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="header">
+                            <extended-item extensionName="CrosstabCell" id="353">
+                                <property name="content">
+                                    <label id="331">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">零售门店</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="verticalAlign">middle</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="360">
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="367">
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="374">
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="325">
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="337">
+                                <property name="content">
+                                    <label id="348">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">商品编码</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="352">
+                                <property name="content">
+                                    <label id="355">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">商品名</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="359">
+                                <property name="content">
+                                    <label id="362">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">规格</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="366">
+                                <property name="content">
+                                    <label id="369">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">生产厂商</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="373">
+                                <property name="content">
+                                    <label id="376">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">通用名</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">1px</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">1px</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">1px</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">1px</property>
+                            </extended-item>
+                        </property>
+                        <property name="pageBreakBefore">auto</property>
+                        <property name="pageBreakAfter">auto</property>
+                        <structure name="toc"/>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">零售门店</property>
+                                <expression name="expression">dimension["Group5"]["零售门店"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">销售数量_Group5/零售门店</property>
+                                <expression name="expression">measure["销售数量"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group5/零售门店</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">销售金额_Group5/零售门店</property>
+                                <expression name="expression">measure["销售金额"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group5/零售门店</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">商品编码</property>
+                                <expression name="expression">dimension["Group"]["商品编码"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">销售数量_Group/商品编码_Group5/零售门店</property>
+                                <expression name="expression">measure["销售数量"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/商品编码</value>
+                                    <value>Group5/零售门店</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">销售金额_Group/商品编码_Group5/零售门店</property>
+                                <expression name="expression">measure["销售金额"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/商品编码</value>
+                                    <value>Group5/零售门店</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">商品名</property>
+                                <expression name="expression">dimension["Group1"]["商品名"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">销售数量_Group1/商品名_Group5/零售门店</property>
+                                <expression name="expression">measure["销售数量"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group1/商品名</value>
+                                    <value>Group5/零售门店</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">销售金额_Group1/商品名_Group5/零售门店</property>
+                                <expression name="expression">measure["销售金额"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group1/商品名</value>
+                                    <value>Group5/零售门店</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">规格</property>
+                                <expression name="expression">dimension["Group2"]["规格"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">销售数量_Group2/规格_Group5/零售门店</property>
+                                <expression name="expression">measure["销售数量"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group2/规格</value>
+                                    <value>Group5/零售门店</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">销售金额_Group2/规格_Group5/零售门店</property>
+                                <expression name="expression">measure["销售金额"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group2/规格</value>
+                                    <value>Group5/零售门店</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">生产厂商</property>
+                                <expression name="expression">dimension["Group3"]["生产厂商"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">销售数量_Group3/生产厂商_Group5/零售门店</property>
+                                <expression name="expression">measure["销售数量"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group3/生产厂商</value>
+                                    <value>Group5/零售门店</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">销售金额_Group3/生产厂商_Group5/零售门店</property>
+                                <expression name="expression">measure["销售金额"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group3/生产厂商</value>
+                                    <value>Group5/零售门店</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">通用名</property>
+                                <expression name="expression">dimension["Group4"]["通用名"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">销售数量_Group4/通用名_Group5/零售门店</property>
+                                <expression name="expression">measure["销售数量"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group4/通用名</value>
+                                    <value>Group5/零售门店</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">销售金额_Group4/通用名_Group5/零售门店</property>
+                                <expression name="expression">measure["销售金额"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group4/通用名</value>
+                                    <value>Group5/零售门店</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                </cell>
+            </row>
+            <row id="386">
+                <cell id="387"/>
+            </row>
+        </grid>
+    </body>
+</report>
